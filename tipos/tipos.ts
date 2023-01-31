@@ -61,3 +61,28 @@ let carro:any="BMW"
 console.log(carro)
 carro={marca:"BMW",ano:2019}
 console.log(carro) 
+
+//funcöes
+function retornaMeuNome():string{
+  return nome
+}
+console.log(retornaMeuNome())
+
+function digaOi():void{
+  console.log("Oi")
+}
+digaOi()
+
+function multiplicar(numA:number, numB:number):number{
+  return numA*numB
+}
+// console.log(multiplicar(2,"Bia"))
+console.log(multiplicar(2,4.7)) 
+
+//tipo funcao
+let calculo:(a:number,b:number)=>number
+// calculo=digaOi
+// calculo()
+
+calculo=multiplicar
+console.log(calculo(5,6))

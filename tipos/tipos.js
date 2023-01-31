@@ -52,3 +52,23 @@ let carro = "BMW";
 console.log(carro);
 carro = { marca: "BMW", ano: 2019 };
 console.log(carro);
+//funcöes
+function retornaMeuNome() {
+    return nome;
+}
+console.log(retornaMeuNome());
+function digaOi() {
+    console.log("Oi");
+}
+digaOi();
+function multiplicar(numA, numB) {
+    return numA * numB;
+}
+// console.log(multiplicar(2,"Bia"))
+console.log(multiplicar(2, 4.7));
+//tipo funcao
+let calculo;
+// calculo=digaOi
+// calculo()
+calculo = multiplicar;
+console.log(calculo(5, 6));
