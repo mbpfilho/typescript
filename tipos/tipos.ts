@@ -86,3 +86,25 @@ let calculo:(a:number,b:number)=>number
 
 calculo=multiplicar
 console.log(calculo(5,6))
+
+//objetos
+let usuario:{nome:string,idade:number}={
+  nome:"Joäo",
+  idade: 27
+}
+
+console.log(usuario)
+
+// usuario={}
+
+// usuario={
+//   name: "Maria",
+//   age: 21
+// }
+
+usuario={
+  idade: 21,
+  nome: "Maria"
+}
+
+console.log(usuario)
