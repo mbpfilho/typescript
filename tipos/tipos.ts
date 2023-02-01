@@ -116,3 +116,14 @@ const funcionario:{supervisores:string[], ponto(n:number):string}={supervisores:
 console.log(funcionario.supervisores) 
 console.log(funcionario.ponto(8)) 
 console.log(funcionario.ponto(9))
+
+// Alias - tipos personalizados
+type Funcionario={supervisores:string[], ponto(n:number):string}
+
+const funcionario2:Funcionario={supervisores:["Joao","Jose"],ponto:(n)=>{return n>8?"Fora do horário":"Ponto normal"}}
+
+//Union Types
+let nota:number|string=10
+console.log(`Minha nota é ${nota}!`)
+nota="10"
+console.log(`Minha nota é ${nota}!`)
