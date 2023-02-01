@@ -88,3 +88,8 @@ usuario = {
     nome: "Maria"
 };
 console.log(usuario);
+//desafio
+const funcionario = { supervisores: ["Joao", "Jose"], ponto: (n) => { return n > 8 ? "Fora do horário" : "Ponto normal"; } };
+console.log(funcionario.supervisores);
+console.log(funcionario.ponto(8));
+console.log(funcionario.ponto(9));
