@@ -99,3 +99,31 @@ let nota = 10;
 console.log(`Minha nota é ${nota}!`);
 nota = "10";
 console.log(`Minha nota é ${nota}!`);
+//never
+function falha(msg) {
+    throw new Error(msg);
+}
+const produto = {
+    nome: "Sabäo",
+    preco: 4,
+    validarProduto() {
+        if (!this.nome || this.nome.trim().length == 0)
+            falha("Precisa ter um nome");
+        if (this.preco <= 0)
+            falha("Preco inválido");
+    }
+};
+produto.validarProduto();
+let contaBancaria = {
+    saldo: 3456,
+    depositar(valor) {
+        this.saldo += valor;
+    }
+};
+let correntista = {
+    nome: "Ana Silva",
+    contaBancaria: contaBancaria,
+    contatos: ["344564789", "98765421"]
+};
+correntista.contaBancaria.depositar(3000);
+console.log(correntista);
