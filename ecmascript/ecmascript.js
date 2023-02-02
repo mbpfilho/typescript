@@ -59,3 +59,26 @@ const cientista = { primeiroNome: "Will", experiencia: 12 };
 // console.log(primeiroNome, experiencia) 
 const { primeiroNome, experiencia } = cientista;
 console.log(primeiroNome, experiencia);
+//callback
+function esperar3s(callback) {
+    setTimeout(() => {
+        callback("3s depois...");
+    }, 3000);
+}
+esperar3s((resultado) => console.log(resultado));
+//promises
+function esperar4sPromise() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("4s depois promise...");
+        }, 4000);
+    });
+}
+esperar4sPromise().then(dado => console.log(dado));
+fetch("https://swapi.dev/api/people/1")
+    .then(res => res.json())
+    .then(personagem => personagem.films)
+    .then(films => fetch(films[0]))
+    .then(resFilm => resFilm.json())
+    .then(filme => console.log(filme.title))
+    .catch(err => console.log("Catch!!" + err));

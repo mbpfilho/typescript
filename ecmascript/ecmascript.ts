@@ -29,8 +29,8 @@ console.log(w)
 // Abaixo temos um código em JavaScript. "Traduza-o" para TypeScript!
 var dobro = function(valor: number):number {
   return valor * 2
-  }
-  console.log(dobro(10))
+}
+console.log(dobro(10))
 
 const dobroD = (valor: number): number => valor * 2
 
@@ -45,7 +45,7 @@ var dizerOla = function (nomeP?:string) {
 dizerOla()
 dizerOla("Anna")
 
-const dizerOlaD = (nomeD?:string) => console.log(`Ola, ${nomeD??"Pessoa"}`)
+const dizerOlaD = (nomeD?:string):void => console.log(`Ola, ${nomeD??"Pessoa"}`)
 
 dizerOlaD()
 dizerOlaD("Anna") 
@@ -74,3 +74,32 @@ const cientista = {primeiroNome: "Will", experiencia: 12}
 // console.log(primeiroNome, experiencia) 
 const {primeiroNome,experiencia} = cientista
 console.log(primeiroNome, experiencia) 
+
+
+//callback
+function esperar3s(callback:(dado:string)=>void){
+  setTimeout(()=>{
+    callback("3s depois...")
+  },3000)
+}
+esperar3s((resultado:string)=>console.log(resultado)) 
+
+
+//promises
+function esperar4sPromise(){
+  return new Promise((resolve:any)=>{
+    setTimeout(()=>{
+      resolve("4s depois promise...")
+    }, 4000)
+  })
+}
+esperar4sPromise().then(dado=>console.log(dado))
+
+
+fetch("https://swapi.dev/api/people/1")
+  .then(res=>res.json())
+  .then(personagem=>personagem.films)
+  .then(films=>fetch(films[0]))
+  .then(resFilm=>resFilm.json())
+  .then(filme=>console.log(filme.title))
+  .catch(err=>console.log("Catch!!"+err))
