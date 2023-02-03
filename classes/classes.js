@@ -34,8 +34,11 @@ class Produto {
         this.preco = preco;
         this.desconto = desconto;
     }
+    precoComDesconto() {
+        return this.preco * (1 - this.desconto);
+    }
     resumo() {
-        return `${this.nome} custa R$ ${this.preco} (${this.desconto * 100}% de desconto)`;
+        return `${this.nome} custa R$ ${this.precoComDesconto()} (${this.desconto * 100}% de desconto)`;
     }
 }
 const prod1 = new Produto("arroz", 15);

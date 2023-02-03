@@ -37,8 +37,12 @@ console.log(casamentoEsperto)
 class Produto {
   constructor(public nome: string, public preco: number, public desconto: number = 0){}
 
+  precoComDesconto(): number {
+    return this.preco*(1-this.desconto)
+  }
+
   public resumo(): string {
-    return `${this.nome} custa R$ ${this.preco} (${this.desconto*100}% de desconto)`
+    return `${this.nome} custa R$ ${this.precoComDesconto()} (${this.desconto*100}% de desconto)`
   }
 }
 const prod1=new Produto("arroz",15)
