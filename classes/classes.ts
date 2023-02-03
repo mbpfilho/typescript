@@ -33,3 +33,11 @@ const casamentoEsperto = new DataEsperta  //posso omitir os parênteses
 casamentoEsperto.ano=2017
 console.log(casamentoEsperto)
 
+// desafio classe produto
+class Produto {
+  constructor(public nome: string, public preco: number, public desconto: number = 0){}
+}
+const arroz=new Produto("arroz",15)
+console.log(arroz)
+const feijao=new Produto("feijäo",25,.1)
+console.log(feijao)

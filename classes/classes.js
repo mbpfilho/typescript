@@ -27,3 +27,15 @@ console.log(aniversarioEsperto);
 const casamentoEsperto = new DataEsperta; //posso omitir os parênteses
 casamentoEsperto.ano = 2017;
 console.log(casamentoEsperto);
+// desafio classe produto
+class Produto {
+    constructor(nome, preco, desconto = 0) {
+        this.nome = nome;
+        this.preco = preco;
+        this.desconto = desconto;
+    }
+}
+const arroz = new Produto("arroz", 15);
+console.log(arroz);
+const feijao = new Produto("feijäo", 25, .1);
+console.log(feijao);
