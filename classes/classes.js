@@ -75,3 +75,18 @@ console.log(carro1.acelerar());
 console.log(carro1.frear());
 Array(30).fill(0).forEach(() => carro1.frear());
 console.log(carro1.frear());
+class Ferrari extends Carro {
+    constructor(modelo, velocidadeMaxima) {
+        super("Ferrari", modelo, velocidadeMaxima);
+    }
+    acelerar() {
+        return this.alterarVelocidade(20);
+    }
+    frear() {
+        return this.alterarVelocidade(-15);
+    }
+}
+const f40 = new Ferrari("F40", 324);
+console.log(`${f40.marca} ${f40.modelo}`);
+console.log(f40.acelerar());
+console.log(f40.frear());
