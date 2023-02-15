@@ -14,7 +14,7 @@ class Moto {
   }
 }
 
-var moto = new Moto('Ducati')
+const moto = new Moto('Ducati')
 moto.buzinar()
 console.log(moto.velocidade)
 moto.acelerar(30)
@@ -23,30 +23,27 @@ console.log(moto.velocidade)
 
 // Exercício 2 - Herança
 abstract class Objeto2D {
-  protected resultado: number = 0
-
-  abstract area(base: number, altura: number): void
-
-  getResultado(): number {
-    return this.resultado
-  }
   
+  constructor(public base: number = 0, public altura: number = 0){}
+
+  abstract area(): number
 }
 
 class Retangulo extends Objeto2D{
-  area(base: number, altura: number): void {
-    this.resultado = base * altura
+  area(): number {
+    return this.base * this.altura
   }
 }
 
-const r1 = new Retangulo()
-r1.area(5, 7)
-console.log(r1.getResultado())
+const retangulo = new Retangulo(5, 7)
+console.log(retangulo.area())
+retangulo.base=10 
+console.log(retangulo.area())
 
 
 // Exercício 3 - Getters & Setters
 class Estagiario{
-  _primeiroNome: string = ''
+  private _primeiroNome: string = ''
 
   get primeiroNome(): string {
     return this._primeiroNome

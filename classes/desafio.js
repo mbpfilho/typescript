@@ -11,28 +11,27 @@ class Moto {
         this.velocidade = this.velocidade + delta;
     }
 }
-var moto = new Moto('Ducati');
+const moto = new Moto('Ducati');
 moto.buzinar();
 console.log(moto.velocidade);
 moto.acelerar(30);
 console.log(moto.velocidade);
 // Exercício 2 - Herança
 class Objeto2D {
-    constructor() {
-        this.resultado = 0;
-    }
-    getResultado() {
-        return this.resultado;
+    constructor(base = 0, altura = 0) {
+        this.base = base;
+        this.altura = altura;
     }
 }
 class Retangulo extends Objeto2D {
-    area(base, altura) {
-        this.resultado = base * altura;
+    area() {
+        return this.base * this.altura;
     }
 }
-const r1 = new Retangulo();
-r1.area(5, 7);
-console.log(r1.getResultado());
+const retangulo = new Retangulo(5, 7);
+console.log(retangulo.area());
+retangulo.base = 10;
+console.log(retangulo.area());
 // Exercício 3 - Getters & Setters
 class Estagiario {
     constructor() {
