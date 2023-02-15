@@ -133,7 +133,7 @@ class Matematica{
   static PI: number = 3.1416
 
   static areaCirc(raio: number): number {
-    return this.PI*raio*raio
+    return Matematica.PI*raio*raio
   }
 }
 
@@ -145,6 +145,7 @@ class Matematica{
 // console.log(m2.areaCirc(4))
 
 console.log(Matematica.areaCirc(4))
+
 
 // classe abstrata
 abstract class X {
@@ -185,3 +186,23 @@ console.log(s1.getResultado())
 s1 = new Multiplicacao()
 s1.executar(2,3,4,5)
 console.log(s1.getResultado())
+
+
+// construtor privado & singleton
+
+class Unico {
+  private static instance: Unico = new Unico
+  private constructor(){}
+
+  static getInstance():Unico{
+    return Unico.instance
+  }
+
+  agora(){
+    return new Date
+  }
+}
+
+// const errado=new Unico()
+
+console.log(Unico.getInstance().agora())
