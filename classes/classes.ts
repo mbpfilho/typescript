@@ -145,3 +145,43 @@ class Matematica{
 // console.log(m2.areaCirc(4))
 
 console.log(Matematica.areaCirc(4))
+
+// classe abstrata
+abstract class X {
+  abstract y(a: number): number
+
+  w(b:number): void {
+    console.log(b)
+  }
+}
+
+// console.log(new X())
+
+abstract class Calculo {
+  protected resultado: number = 0
+
+  abstract executar(...numeros: number[]): void
+
+  getResultado(): number {
+    return this.resultado
+  }
+}
+
+class Soma extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t + a)
+  }
+}
+class Multiplicacao extends Calculo {
+  executar(...numeros: number[]): void {
+    this.resultado = numeros.reduce((t, a) => t * a)
+  }
+}
+
+let s1: Calculo = new Soma()
+s1.executar(2,3,4,5)
+console.log(s1.getResultado()) 
+
+s1 = new Multiplicacao()
+s1.executar(2,3,4,5)
+console.log(s1.getResultado())
