@@ -7,6 +7,7 @@
   <title>TypeScript</title>
 </head>
 <body>
+  <script src="node_modules\systemjs\dist\system.js"></script>
   <!-- <script src="introducao/basico.js"></script> -->
   <!-- <script src="tipos/tipos.js"></script> -->
   <!-- <script src="compilador/compilador.js"></script> -->
@@ -16,6 +17,18 @@
   <!-- <script src="namespaces/geometriaCirculo.js"></script>
   <script src="namespaces/geometriaRetangulo.js"></script> -->
   <!-- <script src="namespaces/namespaces.js"></script> -->
-  <script src="modulos/modulos.js"></script>
+  <!-- <script src="modulos/modulos.js"></script> -->
+  <script>
+    SystemJS.config({
+      baseURL: "/modulos",
+      packages: {
+        "/modulos": {
+          defaultJSExtension: true
+        }
+      }
+    })
+
+    SystemJS.import("./modulos/modulos.js")
+  </script>
 </body>
 </html>

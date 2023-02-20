@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/mbpfilho/typescript#readme",
   "dependencies": {
-    "live-server": "^1.2.2"
+    "@types/node": "^18.14.0",
+    "live-server": "^1.2.2",
+    "systemjs": "^0.21.5"
   }
 }
