@@ -34,3 +34,5 @@ imprimir([
     { nome: "Ciclano", idade: 23 },
     { nome: "Beltrano", idade: 24 }
 ]);
+const chamarEcho = echoMelhorado;
+console.log(chamarEcho("Alguma coisa"));
